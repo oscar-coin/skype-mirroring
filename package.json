@@ -1,0 +1,41 @@
+{
+  "name": "skypebot",
+  "version": "0.0.0",
+  "description": "A simple skype bot that mirrors all messages to an email adress.",
+  "homepage": "http://www.farbesieben.com",
+  "author": {
+    "name": "Christian Westhoff",
+    "email": "christian@farbesieben.com",
+    "url": ""
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "keywords": [],
+  "repository": "christianwesthoff/skypebot",
+  "devDependencies": {
+    "gulp": "^3.6.0",
+    "gulp-eslint": "^1.0.0",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-istanbul": "^0.9.0",
+    "gulp-mocha": "^2.0.0",
+    "gulp-plumber": "^1.0.0",
+    "gulp-nsp": "^0.4.5",
+    "gulp-babel": "^5.1.0",
+    "del": "^2.0.2",
+    "babel-core": "^5.5.0",
+    "isparta": "^3.0.3"
+  },
+  "scripts": {
+    "prepublish": "gulp prepublish",
+    "test": "gulp"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "firebase": "^2.3.1",
+    "nodemailer": "^1.8.0",
+    "sha1": "^1.1.1",
+    "skyweb": "git+https://github.com/ShyykoSerhiy/skyweb.git"
+  }
+}
