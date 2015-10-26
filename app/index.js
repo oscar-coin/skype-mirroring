@@ -25,12 +25,12 @@ skyweb.messagesCallback = function (messages) {
   });
 };
 
+// Added express for avoiding Heroku $PORT error
 var express = require('express');
 var app = express();
 
 app.set('port', process.env.PORT || 5000);
 
-//For avoiding Heroku $PORT error
 app.get('/', function (request, response) {
   var result = 'App is running';
   response.send(result);
