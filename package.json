@@ -9,9 +9,9 @@
     "url": ""
   },
   "files": [
-    "dist"
+    "app"
   ],
-  "main": "dist/index.js",
+  "main": "app/index.js",
   "keywords": [],
   "repository": "christianwesthoff/skypebot",
   "devDependencies": {
