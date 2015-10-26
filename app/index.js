@@ -1,3 +1,7 @@
+/**
+ * Created by Christian Westhoff
+ * @type {*|exports|module.exports}
+ */
 'use strict';
 
 var Skyweb = require('skyweb');

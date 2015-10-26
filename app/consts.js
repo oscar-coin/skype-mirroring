@@ -1,3 +1,7 @@
+/**
+ * Created by Christian Westhoff
+ * @type {*|exports|module.exports}
+ */
 // SKYPE SETTINGS
 'use strict';
 
