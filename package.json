@@ -29,7 +29,8 @@
   },
   "scripts": {
     "prepublish": "gulp prepublish",
-    "test": "gulp"
+    "test": "gulp",
+    "start": "node ./dist/index.js"
   },
   "license": "MIT",
   "dependencies": {
