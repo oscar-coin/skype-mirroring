@@ -61,8 +61,8 @@ function getOrCreateChat(msg, callback) {
     }
     var sender = formatAlias(msg.resource.from);
     var threadName;
-    if (msg.resource.threadTopic) {
-      threadName = msg.resource.threadTopic;
+    if (msg.resource.threadtopic) {
+      threadName = msg.resource.threadtopic;
     } else {
       threadName = sender;
     }
