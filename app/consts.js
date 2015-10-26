@@ -13,4 +13,4 @@ exports.FIREBASE_SITE = 'coin-skype-bot';
 exports.FIREBASE_SECRET = 'rdhAjp9Yc0X4RuVxQOSBUlhw6WniKUMdDeUjP1fe';
 
 // MONGODB SETTINGS
-exports.MONGOLAB_DB = 'mongodb://root:123456@ds041494.mongolab.com:41494/skypebot';
+exports.MONGOLAB_DB = 'mongodb://oscar:0QOtOJx7YBnnPHiKV54V@23.102.28.222:27017/oscar';

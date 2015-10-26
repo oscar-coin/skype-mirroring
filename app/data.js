@@ -11,26 +11,26 @@ var personSchema = new Schema({
   name: String,
   alias: String,
   uid: String
-});
+}, { collection: 'skype_person' });
 
 var messageSchema = new Schema({
   _composer: { type: Schema.Types.ObjectId, ref: 'Person' },
-  _chat: { type: Schema.Types.ObjectId, ref: 'Chat' },
+  _thread: { type: Schema.Types.ObjectId, ref: 'Thread' },
   content: String,
   composedAt: Date
-});
+}, { collection: 'skype_message' });
 
-var chatSchema = new Schema({
-  threadName: String,
+var threadSchema = new Schema({
+  name: String,
   uid: String
-});
+}, { collection: 'skype_thread' });
 
 var Message = mongoose.model('Message', messageSchema);
-var Chat = mongoose.model('Chat', chatSchema);
+var Thread = mongoose.model('Thread', threadSchema);
 var Person = mongoose.model('Person', personSchema);
 
 exports.saveMessage = function (msg, callback) {
-  getOrCreateChat(msg, function (error, chat) {
+  getOrCreateThread(msg, function (error, thread) {
     if (error) {
       return callback(error);
     }
@@ -41,7 +41,7 @@ exports.saveMessage = function (msg, callback) {
       var message = new Message({
         content: msg.resource.content,
         composedAt: msg.resource.composetime,
-        _chat: chat._id,
+        _thread: thread._id,
         _composer: person._id
       });
       return message.save(function (__error) {
@@ -54,34 +54,40 @@ exports.saveMessage = function (msg, callback) {
   });
 };
 
-function getOrCreateChat(msg, callback) {
-  Chat.findOne({ uid: formatConversationLink(msg.resource.conversationLink) }, function (error, chat) {
+function getOrCreateThread(msg, callback) {
+  Thread.findOne({ uid: formatConversationLink(msg.resource.conversationLink) }, function (error, thread) {
     if (error) {
       return callback(error);
     }
     var sender = formatAlias(msg.resource.from);
-    var threadName;
+    var name;
     if (msg.resource.threadtopic) {
-      threadName = msg.resource.threadtopic;
+      name = msg.resource.threadtopic;
     } else {
-      threadName = sender;
+      name = sender;
     }
-    if (!chat) {
-      chat = new Chat({
-        threadName: threadName,
+    if (!thread) {
+      thread = new Thread({
+        name: name,
         uid: formatConversationLink(msg.resource.conversationLink)
       });
-      return chat.save(function (_error, _chat) {
+      return thread.save(function (_error, _thread) {
         if (_error) {
           return callback(_error);
         }
-        callback(null, _chat);
+        callback(null, _thread);
       });
     }
-    if (chat.threadName !== threadName) {
-      chat.threadName = threadName;
+    if (thread.name !== name) {
+      thread.name = name;
+      return thread.save(function (_error, _thread) {
+        if (_error) {
+          return callback(_error);
+        }
+        callback(null, _thread);
+      });
     }
-    callback(null, chat);
+    callback(null, thread);
   });
 }
 
