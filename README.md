@@ -1,5 +1,5 @@
 # skypebot [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> A simple skype bot that mirrors all messages to an email adress.
+> A simple skype bot that mirrors all messages to a mongodb.
 
 
 ## Install

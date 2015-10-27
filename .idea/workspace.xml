@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66359055-0625-4c9e-b490-a96ede70699a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/consts.js" afterPath="$PROJECT_DIR$/app/consts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/consts.js" afterPath="$PROJECT_DIR$/lib/consts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/data.js" afterPath="$PROJECT_DIR$/app/data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/data.js" afterPath="$PROJECT_DIR$/lib/data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/index.js" afterPath="$PROJECT_DIR$/app/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/index.js" afterPath="$PROJECT_DIR$/lib/index.js" />
-    </list>
+    <list default="true" id="66359055-0625-4c9e-b490-a96ede70699a" name="Default" comment="" />
     <ignored path="skypebot.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
