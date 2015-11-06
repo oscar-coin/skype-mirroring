@@ -19,7 +19,8 @@ skyweb.login(Consts.SKYPE_USERNAME, Consts.SKYPE_PASSWORD).then(function () {
 
 skyweb.messagesCallback = function (messages) {
   messages.forEach(function (message) {
-    if (message.resource.from.indexOf(Consts.SKYPE_USERNAME) === -1 && message.resource.messagetype !== 'Control/Typing' && message.resource.messagetype !== 'Control/ClearTyping' && message.resourceType === 'NewMessage' && message.resource.messagetype === 'RichText') {
+    if (message.resource.from.indexOf(Consts.SKYPE_USERNAME) === -1 && message.resourceType === 'NewMessage') {
+      console.log("New message by: "+message.resource.imdisplayname);
       Data.saveMessage(message, function (error) {
         if (error) {
           return console.log(error);
