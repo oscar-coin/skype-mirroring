@@ -31,6 +31,13 @@ skyweb.messagesCallback = function (messages) {
   });
 };
 
+skyweb.authRequestCallback = function (requests) {
+  requests.forEach(function (request) {
+    skyweb.acceptAuthRequest(request.sender);
+    skyweb.sendMessage("8:" + request.sender, "I accepted you!");
+  });
+};
+
 // Added express for avoiding Heroku $PORT error
 var express = require('express');
 var app = express();
