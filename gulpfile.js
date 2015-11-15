@@ -51,11 +51,11 @@ gulp.task('test', ['pre-test'], function (cb) {
 gulp.task('babel', ['clean'], function () {
   return gulp.src('lib/**/*.js')
     .pipe(babel())
-    .pipe(gulp.dest('app'));
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('clean', function () {
-  return del('app');
+  return del('dist');
 });
 
 gulp.task('prepublish', ['nsp', 'babel']);
