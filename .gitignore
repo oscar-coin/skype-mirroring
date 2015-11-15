@@ -10,3 +10,5 @@ settings.json
 */.DS_Store
 .idea/*
 ./.idea/*
+./npm-debug.log
+npm-debug.log
