@@ -37,6 +37,6 @@
     "express": "^4.13.3",
     "mongoose": "^4.1.12",
     "sha1": "^1.1.1",
-    "skyweb": "git+https://github.com/ShyykoSerhiy/skyweb.git"
+    "skyweb": "git+ssh://git@github.com/christianwesthoff/skyweb.git"
   }
 }
